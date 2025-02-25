@@ -1,3 +1,8 @@
 hello world
+
+本项目主要用了GROM、Hertiz、Kitex等框架，服务注册用的是Consul
+还有好多内容待完善......
+
+以下是启动服务的流程：
 启动Consul服务：
 consul agent -dev -ui -client 0.0.0.0
