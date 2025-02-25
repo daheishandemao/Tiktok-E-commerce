@@ -1,0 +1,347 @@
+2025-02-25T21:23:42.048+0800	ERROR	nacos_server/nacos_server.go:98	login in err:Post "http://127.0.0.1:8848/nacos/v1/auth/users/login": dial tcp 127.0.0.1:8848: connectex: No connection could be made because the target machine actively refused it.
+2025-02-25T21:23:42.069+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55110
+2025-02-25T21:23:42.069+0800	INFO	rpc/rpc_client.go:157	init rpc client for name %!(EXTRA string=a646c79c-7df8-4208-be6d-8f980a90d4ea)
+2025-02-25T21:23:42.069+0800	INFO	rpc/rpc_client.go:166	get app conn labels from client config map[] 
+2025-02-25T21:23:42.069+0800	INFO	rpc/rpc_client.go:168	get app conn labels from env map[] 
+2025-02-25T21:23:42.069+0800	INFO	rpc/rpc_client.go:171	final app conn labels : map[] 
+2025-02-25T21:23:42.069+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:23:42.069+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.069+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.069+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.078+0800	INFO	util/common.go:96	Local IP:192.168.31.178
+2025-02-25T21:23:42.078+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2025-02-25T21:23:42.078+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:23:42.078+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.078+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.078+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.079+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2025-02-25T21:23:42.079+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.079+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] a646c79c-7df8-4208-be6d-8f980a90d4ea fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2025-02-25T21:23:42.079+0800	INFO	rpc/rpc_client.go:426	a646c79c-7df8-4208-be6d-8f980a90d4ea try to re connect to a new server, server is not appointed, will choose a random server.
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.079+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.079+0800	INFO	naming_grpc/naming_grpc_proxy.go:95	register instance namespaceId:<public>,serviceName:<auth-service> with instance:<{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}>
+2025-02-25T21:23:42.079+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T21:23:42.080+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.080+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.080+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.080+0800	WARN	rpc/rpc_client.go:457	a646c79c-7df8-4208-be6d-8f980a90d4ea fail to connect server, after trying 1 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T21:23:42.180+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T21:23:42.181+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:23:42.181+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:23:42.181+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:23:42.181+0800	WARN	rpc/rpc_client.go:457	a646c79c-7df8-4208-be6d-8f980a90d4ea fail to connect server, after trying 2 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T21:23:42.280+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T21:24:34.369+0800	ERROR	nacos_server/nacos_server.go:98	login in err:Post "http://127.0.0.1:8848/nacos/v1/auth/users/login": dial tcp 127.0.0.1:8848: connectex: No connection could be made because the target machine actively refused it.
+2025-02-25T21:24:34.383+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55719
+2025-02-25T21:24:34.383+0800	INFO	rpc/rpc_client.go:157	init rpc client for name %!(EXTRA string=53df36fd-02c5-4ccc-9a33-58572535377f)
+2025-02-25T21:24:34.383+0800	INFO	rpc/rpc_client.go:166	get app conn labels from client config map[] 
+2025-02-25T21:24:34.383+0800	INFO	rpc/rpc_client.go:168	get app conn labels from env map[] 
+2025-02-25T21:24:34.383+0800	INFO	rpc/rpc_client.go:171	final app conn labels : map[] 
+2025-02-25T21:24:34.383+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:24:34.383+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.383+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.383+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.392+0800	INFO	util/common.go:96	Local IP:192.168.31.178
+2025-02-25T21:24:34.392+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2025-02-25T21:24:34.392+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.392+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2025-02-25T21:24:34.392+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.392+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.393+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 53df36fd-02c5-4ccc-9a33-58572535377f fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2025-02-25T21:24:34.393+0800	INFO	rpc/rpc_client.go:426	53df36fd-02c5-4ccc-9a33-58572535377f try to re connect to a new server, server is not appointed, will choose a random server.
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.393+0800	INFO	naming_grpc/naming_grpc_proxy.go:95	register instance namespaceId:<public>,serviceName:<auth-service> with instance:<{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}>
+2025-02-25T21:24:34.393+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.393+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.394+0800	WARN	rpc/rpc_client.go:457	53df36fd-02c5-4ccc-9a33-58572535377f fail to connect server, after trying 1 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T21:24:34.494+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T21:24:34.494+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T21:24:34.494+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T21:24:34.494+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T21:24:34.494+0800	WARN	rpc/rpc_client.go:457	53df36fd-02c5-4ccc-9a33-58572535377f fail to connect server, after trying 2 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T21:24:34.594+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:16:21.679+0800	ERROR	nacos_server/nacos_server.go:98	login in err:Post "http://127.0.0.1:8848/nacos/v1/auth/users/login": dial tcp 127.0.0.1:8848: connectex: No connection could be made because the target machine actively refused it.
+2025-02-25T22:16:21.694+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55293
+2025-02-25T22:16:21.694+0800	INFO	rpc/rpc_client.go:157	init rpc client for name %!(EXTRA string=57582d53-a033-4d5c-a9fa-497acabf41bb)
+2025-02-25T22:16:21.694+0800	INFO	rpc/rpc_client.go:166	get app conn labels from client config map[] 
+2025-02-25T22:16:21.694+0800	INFO	rpc/rpc_client.go:168	get app conn labels from env map[] 
+2025-02-25T22:16:21.694+0800	INFO	rpc/rpc_client.go:171	final app conn labels : map[] 
+2025-02-25T22:16:21.694+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:16:21.694+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.694+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.694+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.709+0800	INFO	util/common.go:96	Local IP:172.17.48.1
+2025-02-25T22:16:21.709+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2025-02-25T22:16:21.709+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.709+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2025-02-25T22:16:21.709+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.709+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 57582d53-a033-4d5c-a9fa-497acabf41bb fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2025-02-25T22:16:21.709+0800	INFO	rpc/rpc_client.go:426	57582d53-a033-4d5c-a9fa-497acabf41bb try to re connect to a new server, server is not appointed, will choose a random server.
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.709+0800	INFO	naming_grpc/naming_grpc_proxy.go:95	register instance namespaceId:<public>,serviceName:<auth-service> with instance:<{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}>
+2025-02-25T22:16:21.709+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.709+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.709+0800	WARN	rpc/rpc_client.go:457	57582d53-a033-4d5c-a9fa-497acabf41bb fail to connect server, after trying 1 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T22:16:21.813+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:21.813+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:21.813+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:16:21.813+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:16:21.813+0800	WARN	rpc/rpc_client.go:457	57582d53-a033-4d5c-a9fa-497acabf41bb fail to connect server, after trying 2 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T22:16:21.913+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"127.0.0.1","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"","serviceName":"","metadata":{},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:45
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:16:22.014+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:16:22.014+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:16:22.014+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:46.990+0800	ERROR	nacos_server/nacos_server.go:98	login in err:Post "http://127.0.0.1:8848/nacos/v1/auth/users/login": dial tcp 127.0.0.1:8848: connectex: No connection could be made because the target machine actively refused it.
+2025-02-25T22:17:47.020+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55850
+2025-02-25T22:17:47.021+0800	INFO	rpc/rpc_client.go:157	init rpc client for name %!(EXTRA string=5e9480ee-b718-480e-95d3-6edc006ef88b)
+2025-02-25T22:17:47.021+0800	INFO	rpc/rpc_client.go:166	get app conn labels from client config map[] 
+2025-02-25T22:17:47.021+0800	INFO	rpc/rpc_client.go:168	get app conn labels from env map[] 
+2025-02-25T22:17:47.021+0800	INFO	rpc/rpc_client.go:171	final app conn labels : map[] 
+2025-02-25T22:17:47.021+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:17:47.021+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.021+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.021+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.037+0800	INFO	util/common.go:96	Local IP:172.17.48.1
+2025-02-25T22:17:47.038+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=2
+2025-02-25T22:17:47.038+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.038+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=1
+2025-02-25T22:17:47.038+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.038+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.039+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] 5e9480ee-b718-480e-95d3-6edc006ef88b fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it.", start up retry times left=0
+2025-02-25T22:17:47.039+0800	INFO	rpc/rpc_client.go:426	5e9480ee-b718-480e-95d3-6edc006ef88b try to re connect to a new server, server is not appointed, will choose a random server.
+2025-02-25T22:17:47.039+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.039+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.039+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.039+0800	INFO	naming_grpc/naming_grpc_proxy.go:95	register instance namespaceId:<public>,serviceName:<auth-service> with instance:<{"instanceId":"","ip":"192.168.1.100","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"","metadata":{"version":"v1"},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}>
+2025-02-25T22:17:47.039+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"192.168.1.100","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"","metadata":{"version":"v1"},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:44
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:17:47.039+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.043+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.043+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.043+0800	WARN	rpc/rpc_client.go:457	5e9480ee-b718-480e-95d3-6edc006ef88b fail to connect server, after trying 1 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T22:17:47.143+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"192.168.1.100","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"","metadata":{"version":"v1"},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:44
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
+2025-02-25T22:17:47.144+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-25T22:17:47.144+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-25T22:17:47.144+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-25T22:17:47.144+0800	WARN	rpc/rpc_client.go:457	5e9480ee-b718-480e-95d3-6edc006ef88b fail to connect server, after trying 2 times, last try server is {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 127.0.0.1:9848: connectex: No connection could be made because the target machine actively refused it."
+2025-02-25T22:17:47.243+0800	ERROR	rpc/rpc_client.go:629	Send request fail, request=InstanceRequest, body={"requestId":"","namespace":"public","serviceName":"auth-service","groupName":"DEFAULT_GROUP","module":"naming","type":"registerInstance","instance":{"instanceId":"","ip":"192.168.1.100","port":8080,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"","metadata":{"version":"v1"},"instanceHeartBeatInterval":0,"ipDeleteTimeout":0,"instanceHeartBeatTimeOut":0}}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/common/remote/rpc/rpc_client.go:591
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).requestToServer
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:88
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client/naming_grpc.(*NamingGrpcProxy).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_grpc/naming_grpc_proxy.go:99
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingProxyDelegate).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_proxy_delegate.go:86
+github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client.(*NamingClient).RegisterInstance
+	C:/Users/zhang/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.8/clients/naming_client/naming_client.go:115
+main.main
+	d:/study/字节青训营/github-Tiktok-E-commerce/Tiktok-E-commerce/cmd/auth/main.go:44
+runtime.main
+	D:/study/Go/SDK_Windows/src/runtime/proc.go:283
+runtime.goexit
+	D:/study/Go/SDK_Windows/src/runtime/asm_amd64.s:1700
