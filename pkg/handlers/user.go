@@ -5,9 +5,11 @@ import (
 	"time"
 
 	"github.com/cloudwego/hertz/pkg/app"
+	"github.com/daheishandemao/Tiktok-E-commerce/pkg/dal"
 	"github.com/daheishandemao/Tiktok-E-commerce/pkg/middleware"
-	"github.com/golang-jwt/jwt"
+	"github.com/golang-jwt/jwt/v5" // 修正导入路径
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 )
 
 // 请求体结构
@@ -41,7 +43,7 @@ func Register(ctx context.Context, c *app.RequestContext) {
 	}
 
 	// 密码加密存储
-	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)// 默认cost=10，约100ms计算时间
 	if err != nil {
 		c.JSON(500, map[string]string{"error": "密码加密失败"})
 		return

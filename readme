@@ -4,5 +4,10 @@ hello world
 还有好多内容待完善......
 
 以下是启动服务的流程：
+启动docker
+
 启动Consul服务：
 consul agent -dev -ui -client 0.0.0.0
+
+数据库密码：
+123456

@@ -1,0 +1,8 @@
+whitelist:
+  - "/login"
+  - "/register"
+  - "/health"
+
+blacklist:
+  - "/admin/delete"
+  - "/internal/report"

@@ -1,4 +1,3 @@
-# deploy/docker-compose.yml
 services:
   consul:
     image: consul:latest
