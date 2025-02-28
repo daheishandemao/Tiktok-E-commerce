@@ -9,6 +9,7 @@ import (
 
 )
 
+//商品查询
 func GetProduct(c context.Context, ctx *app.RequestContext) {
     id := ctx.Param("id")
     
@@ -21,7 +22,7 @@ func GetProduct(c context.Context, ctx *app.RequestContext) {
     ctx.JSON(200, product)
 }
 
-
+//创造商品
 func CreateProduct(c context.Context, ctx *app.RequestContext) {
     id := ctx.Param("id")
     

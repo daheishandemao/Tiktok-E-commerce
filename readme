@@ -9,5 +9,6 @@ hello world
 启动Consul服务：
 consul agent -dev -ui -client 0.0.0.0
 
+启动mysql
 数据库密码：
 123456

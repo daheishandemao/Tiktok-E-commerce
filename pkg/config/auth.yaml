@@ -4,5 +4,4 @@ whitelist:
   - "/health"
 
 blacklist:
-  - "/admin/delete"
-  - "/internal/report"
+  - "/admin"

@@ -2,9 +2,10 @@ package middleware
 
 import (
 	"context"
-	"log"
-	"github.com/daheishandemao/Tiktok-E-commerce/pkg/config"  // 替换为实际模块路径
+	"os"
 
+	"github.com/daheishandemao/Tiktok-E-commerce/pkg/config" // 替换为实际模块路径
+	"gopkg.in/yaml.v3"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/golang-jwt/jwt/v5"
 )
@@ -15,13 +16,29 @@ var (
 )
 
 // 初始化时加载配置
-var whitelist map[string]bool
+var (
+	WhitelistMap = make(map[string]bool)
+	BlacklistMap = make(map[string]bool)
+)
 
 // 初始化配置（需显式调用）
 func InitAuthMiddleware(configPath string) {
-	if err := config.InitAuthConfig(configPath); err != nil {
-		log.Fatalf("认证配置加载失败: %v", err)
-	}
+	 // 加载配置文件
+	 data, _ := os.ReadFile(configPath)
+    
+	 var config struct {
+		 Whitelist []string `yaml:"whitelist"`
+		 Blacklist []string `yaml:"blacklist"`
+	 }
+	 yaml.Unmarshal(data, &config)
+	 
+	 for _, path := range config.Whitelist {
+		 WhitelistMap[path] = true
+	 }
+	 for _, path := range config.Blacklist {
+		 BlacklistMap[path] = true
+	 }
+	 
 	initialized = true
 }
 
@@ -71,12 +88,14 @@ func JWTAuth() app.HandlerFunc {
 			return
 		}
 
-		
+		//JWT解析部分
 		if claims, ok := token.Claims.(jwt.MapClaims); ok {
 			if userID, exists := claims["userID"]; exists {
-				c.Set("userID", userID)
-				c.Next(ctx)
-				return
+				if uid, ok := userID.(float64); ok { // JWT数字默认解析为float64
+					c.Set("userID", uint(uid))//数值类型转换为uint
+					c.Next(ctx)
+					return
+				}
 			}
 		}
 		c.JSON(401, map[string]string{"error": "令牌解析失败"})

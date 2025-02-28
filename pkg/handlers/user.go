@@ -19,15 +19,29 @@ type RegisterRequest struct {
 }
 
 type LoginRequest struct {
-	Username string `json:"username" validate:"required"`
-	Password string `json:"password" validate:"required"`
+	Username string `json:"username" validate:"required,min=4"`
+	Password string `json:"password" validate:"required,min=6"`
 }
 
 // Register 用户注册
 func Register(ctx context.Context, c *app.RequestContext) {
 	var req RegisterRequest
 	if err := c.BindAndValidate(&req); err != nil {
-		c.JSON(400, map[string]string{"error": "无效的请求参数"})
+		c.JSON(400, map[string]interface{}{
+			"error":   "参数绑定失败",
+			"details": err.Error(), // 显示具体错误信息
+		})
+		return
+	}
+	// 增加空值防御
+	if len(req.Username) == 0 || len(req.Password) == 0 {
+		c.JSON(400, map[string]string{"error": "用户名和密码不能为空",
+			"req.Usernam": req.Username, "req.Passwor": req.Password})
+		return
+	}
+	// 手动校验
+	if len(req.Username) < 4 || len(req.Password) < 6 {
+		c.JSON(400, map[string]string{"error": "用户名需4-20字符，密码需6-32字符"})
 		return
 	}
 
@@ -43,19 +57,21 @@ func Register(ctx context.Context, c *app.RequestContext) {
 	}
 
 	// 密码加密存储
-	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)// 默认cost=10，约100ms计算时间
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost) // 默认cost=10，约100ms计算时间
 	if err != nil {
 		c.JSON(500, map[string]string{"error": "密码加密失败"})
 		return
 	}
 
 	// 创建用户
+	now := time.Now() // 获取当前时间
 	newUser := dal.User{
-		Username: req.Username,
-		Password: string(hashedPassword),
+		Username:  req.Username,
+		Password:  string(hashedPassword),
+		LastLogin: &now, // 显式设置有效时间
 	}
 	if err := dal.DB.Create(&newUser).Error; err != nil {
-		c.JSON(500, map[string]string{"error": "用户创建失败"})
+		c.JSON(500, map[string]interface{}{"error": "用户创建失败", "details": err.Error()}) // 显示具体错误信息})
 		return
 	}
 
@@ -80,7 +96,15 @@ func Register(ctx context.Context, c *app.RequestContext) {
 func Login(ctx context.Context, c *app.RequestContext) {
 	var req LoginRequest
 	if err := c.BindAndValidate(&req); err != nil {
-		c.JSON(400, map[string]string{"error": "无效的请求参数"})
+		c.JSON(400, map[string]interface{}{
+			"error":   "参数校验失败",
+			"details": err.Error(),
+		})
+		return
+	}
+	// 增加空值防御
+	if len(req.Username) == 0 || len(req.Password) == 0 {
+		c.JSON(400, map[string]string{"error": "用户名和密码不能为空"})
 		return
 	}
 
@@ -117,6 +141,7 @@ func Login(ctx context.Context, c *app.RequestContext) {
 		"token":   tokenString,
 	})
 }
+
 func GetUserInfo(_ context.Context, c *app.RequestContext) {
 	// 从中间件获取注入的userID
 	userID, exists := c.Get("userID")
@@ -125,11 +150,24 @@ func GetUserInfo(_ context.Context, c *app.RequestContext) {
 		return
 	}
 
+	// 转换为uint类型
+	uid, ok := userID.(uint)
+	if !ok {
+		c.JSON(500, map[string]string{"error": "用户ID类型错误"})
+		return
+	}
+
+	// 查询真实数据库
+	var user dal.User
+	if err := dal.DB.First(&user, uid).Error; err != nil {
+		c.JSON(404, map[string]string{"error": "用户不存在"})
+		return
+	}
+
 	// 示例数据返回（需替换为真实数据库查询）
 	c.JSON(200, map[string]interface{}{
-		"user_id":  userID,
-		"username": "test_user",
-		"email":    "test@douyin.com",
+		"user_id":    user.ID,
+		"username":   user.Username,
+		"created_at": user.CreatedAt,
 	})
 }
-
