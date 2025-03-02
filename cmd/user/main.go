@@ -9,10 +9,12 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
+	"github.com/daheishandemao/Tiktok-E-commerce/pkg/config"
 	"github.com/daheishandemao/Tiktok-E-commerce/pkg/dal"
 	"github.com/daheishandemao/Tiktok-E-commerce/pkg/handlers"
 	"github.com/daheishandemao/Tiktok-E-commerce/pkg/middleware"
 	"github.com/daheishandemao/Tiktok-E-commerce/pkg/registry"
+	"go.uber.org/zap"
 )
 
 func main() {
@@ -23,6 +25,14 @@ func main() {
 	}()
 
 	hlog.Info("=== 初始化开始 ===")
+	if err := config.Init(); err != nil {
+		panic(err)
+	}
+
+	zap.L().Debug("配置加载结果",
+		zap.Any("redis", config.Conf.Redis),
+		zap.Any("mysql", config.Conf.MySQL))
+
 	middleware.InitAuthMiddleware("config/auth.yaml") // 增加初始化调用
 
 	// 初始化数据库连接
@@ -33,6 +43,12 @@ func main() {
 		server.WithHostPorts(":8080"),
 		server.WithExitWaitTime(30*time.Second),
 	)
+
+	// 注册健康检查端点（必须最先执行） 注册路由
+	h.GET("/health", func(c context.Context, ctx *app.RequestContext) {
+		ctx.JSON(200, map[string]string{"status": "ok"})
+	})
+	// registry.AddHealthCheck(h, "user-service")
 
 	// 路由配置（重点区域）------------------------
 	// 开放接口（无需认证）
@@ -45,10 +61,6 @@ func main() {
 		handlers.GetUserInfo, // 业务处理函数
 	)
 	// -----------------------------------------
-	// 注册健康检查端点（必须最先执行） 注册路由
-	h.GET("/health", func(c context.Context, ctx *app.RequestContext) {
-		ctx.JSON(200, map[string]string{"status": "ok"})
-	})
 
 	// 服务注册（需在路由注册后执行）
 	hlog.Info("正在注册Consul服务") //调用RegisterService注册服务

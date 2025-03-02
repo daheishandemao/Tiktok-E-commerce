@@ -1,5 +1,47 @@
+# version: '3.8'
+
 services:
   consul:
     image: consul:latest
     ports:
       - "8500:8500"
+    networks:
+      - tiktok-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/v1/status/leader"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - tiktok-net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: douyin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - tiktok-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+
+volumes:
+  redis_data:
+  mysql_data:
+
+networks:
+  tiktok-net:
+    driver: bridge

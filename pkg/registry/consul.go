@@ -9,17 +9,19 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
+	"github.com/daheishandemao/Tiktok-E-commerce/pkg/config"
 	"github.com/hashicorp/consul/api"
 )
 
 // RegisterService 注册服务到Consul（含健康检查增强逻辑）
 func RegisterService(serviceName string, port int) (string, error) {
 	// 创建默认配置（连接到本地Consul）
-	config := api.DefaultConfig()
-	config.Address = "localhost:8500" // 显式指定地址，防止DNS问题
+	cfg := api.DefaultConfig()
+	// cfg.Address = "localhost:8500"           // 显式指定地址，防止DNS问题
+	cfg.Address = config.Conf.Consul.Address // 使用配置的地址
 
 	// 创建Consul客户端实例
-	client, err := api.NewClient(config)
+	client, err := api.NewClient(cfg)
 	if err != nil {
 		log.Printf("[致命错误] 创建Consul客户端失败: %v", err)
 		return "", fmt.Errorf("consul客户端初始化失败: %w", err)
@@ -33,10 +35,12 @@ func RegisterService(serviceName string, port int) (string, error) {
 		Port: port,
 		Meta: map[string]string{"env": "dev"}, // 服务监听端口
 		Check: &api.AgentServiceCheck{
-			HTTP:                           fmt.Sprintf("http://localhost:%d/health", port), // 健康检查端点
-			Interval:                       "15s",                                           // 检查间隔（从10s调整为15s）
-			Timeout:                        "3s",                                            // 超时时间（从5s调整为3s）
-			DeregisterCriticalServiceAfter: "1m",                                            // 新增：健康检查失败1分钟后注销服务
+			HTTP:     fmt.Sprintf("http://localhost:%d/health", port), // 健康检查端点
+			Interval: "15s",                                           // 检查间隔（从10s调整为15s）
+			Timeout:  "3s",                                            // 超时时间（从5s调整为3s）
+			// DeregisterCriticalServiceAfter: "1m",  // 新增：健康检查失败1分钟后注销服务
+			DeregisterCriticalServiceAfter: config.Conf.Consul.DeregisterAfter,
+			// TTL: config.Conf.Consul.ServiceCheckTTL,
 		},
 		Tags: []string{"http"}, // 新增标签方便过滤
 	}
@@ -56,8 +60,8 @@ func RegisterService(serviceName string, port int) (string, error) {
 
 // 取消服务注册
 func DeregisterService(serviceID string) error {
-	config := api.DefaultConfig()
-	client, err := api.NewClient(config)
+	cfg := api.DefaultConfig()
+	client, err := api.NewClient(cfg)
 	if err != nil {
 		hlog.Error("Consul客户端创建失败", err)
 		return err

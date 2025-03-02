@@ -1,7 +1,0 @@
-whitelist:
-  - "/login"
-  - "/register"
-  - "/health"
-
-blacklist:
-  - "/admin"

@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0
+  pool_size: 20
+  min_idle_conns: 5
+
+mysql:
+  dsn: "root:123456@tcp(localhost:3306)/douyin?charset=utf8mb4&parseTime=True&loc=Local"
+  max_idle_conn: 20
+  max_open_conn: 100
+
+consul:
+  address: "localhost:8500"
+  check_ttl: "15s"         # 服务健康检查间隔
+  deregister_after: "3m"  # 异常服务保留时间
+
+jwt:
+  secret: "douyin_ecom_2023"  # 至少32位随机字符串
+  expire_hours: 72            # 令牌有效期
+  issuer: "douyin.auth.service" # 签发机构标识
+
+  
+whitelist:
+  - "/login"
+  - "/register"
+  - "/health"
+
+blacklist:
+  - "/admin"
