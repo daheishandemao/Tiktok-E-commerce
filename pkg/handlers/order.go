@@ -238,7 +238,3 @@ func respondError(ctx *app.RequestContext, code int, err *OrderError) {
 		"detail":  err.Detail,
 	})
 }
-func UpdateOrderStatus(orderID string, status string) error {
-    // 实际应调用order服务的接口
-    return db.Model(&Order{}).Where("order_id = ?", orderID).Update("status", status).Error
-}

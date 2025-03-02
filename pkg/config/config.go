@@ -11,11 +11,26 @@ import (
 
 var Conf *Config
 
+type ServiceConfig struct {
+	IP      string `yaml:"ip"`
+	UserHTTPPort    int  `yaml:"user_http_port"`
+	UserRpcPort int `yaml:"user_rpc_port"`
+	ProductHTTPPort    int  `yaml:"product_http_port"`
+	ProductRpcPort int `yaml:"product_rpc_port"`
+	CartHTTPPort    int  `yaml:"cart_http_port"`
+	CartRpcPort int `yaml:"cart_rpc_port"`
+	OrderHTTPPort    int  `yaml:"order_http_port"`
+	OrderRpcPort int `yaml:"order_rpc_port"`
+	PaymentHTTPPort    int  `yaml:"payment_http_port"`
+	PaymentRpcPort int `yaml:"payment_rpc_port"`
+}
+
 type Config struct {
-	Redis  RedisConfig  `yaml:"redis"`
-	MySQL  MySQLConfig  `yaml:"mysql"`
-	Consul ConsulConfig `yaml:"consul"`
-	JWT    JWTConfig    `yaml:"jwt"`
+	Redis   RedisConfig   `yaml:"redis"`
+	MySQL   MySQLConfig   `yaml:"mysql"`
+	Consul  ConsulConfig  `yaml:"consul"`
+	JWT     JWTConfig     `yaml:"jwt"`
+	Service ServiceConfig `yaml:"service"`
 }
 
 type RedisConfig struct {

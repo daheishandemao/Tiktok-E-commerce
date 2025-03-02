@@ -1,5 +1,11 @@
 namespace go order
 
+struct UpdateReq {
+    1: string orderID
+    2: string status
+}
+
 service OrderService {
-    string UpdateStatus(1: string orderID, 2: string status)
+    bool HealthCheck()
+    bool UpdateStatus(1: UpdateReq req)
 }

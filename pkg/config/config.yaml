@@ -23,7 +23,20 @@ jwt:
   expire_hours: 72            # 令牌有效期
   issuer: "douyin.auth.service" # 签发机构标识
 
-  
+service:
+  ip: "127.0.0.1"  # 显式指定本机IP
+  user_http_port: 8080        # HTTP服务端口
+  user_rpc_port: 8880    # RPC服务端口
+  product_http_port: 8081        # HTTP服务端口
+  product_rpc_port: 8881    # RPC服务端口  
+  cart_http_port: 8082        # HTTP服务端口
+  cart_rpc_port: 8882    # RPC服务端口  
+  order_http_port: 8083        # HTTP服务端口
+  order_rpc_port: 8883    # RPC服务端口  
+  payment_http_port: 8084        # HTTP服务端口
+  payment_rpc_port: 8884    # RPC服务端口
+
+
 whitelist:
   - "/login"
   - "/register"
